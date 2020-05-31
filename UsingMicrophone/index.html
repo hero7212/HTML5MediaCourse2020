@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vueapp">
+        <div>
+            <audio controls ref="audio"></audio>
+        </div>
+        <div>
+            <select v-model="selectedaudioDeviceIndex">
+                <option v-for="(d, index) in audioInputDevices" :key="d.deviceId" :value="index">
+                    {{d.deviceId}}
+                </option>
+            </select>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
