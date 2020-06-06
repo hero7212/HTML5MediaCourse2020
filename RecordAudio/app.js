@@ -4,7 +4,7 @@ new Vue({
     data: {
         currentWebmData: null,
         recording: false,
-        paused: false
+        paused: true
     },
 
     mounted() { 
@@ -15,16 +15,18 @@ new Vue({
 
         async _initApp() {
             this._stream = await navigator.mediaDevices.getUserMedia({audio: true, video: false})
-            this._recorder = new MediaRecorder(this._stream, {mimeType: 'video/webm;codecs=h264'})
+            this._recorder = new MediaRecorder(this._stream, {mimeType: "video/webm;codecs=h264"})
             this._recorder.ondataavailable = this.recorder_dataAvailableHandler.bind(this)
         },
 
         recorder_dataAvailableHandler(e) {
             console.log(e)
+            this.currentWebmData = e.data
         },
 
         btnRecrodClicked() {
             this.recording = true
+            this.paused = false
             this._recorder.start()
         },
 

@@ -10,7 +10,7 @@
 <div id="vueapp">
     <div>
         <button @click="btnRecrodClicked" :disabled="recording">Record</button>
-        <button @click="btnPauseClicked" :disabled="paused">Pause</button>
+        <button @click="btnPauseClicked" :disabled="paused || !recording">Pause</button>
         <button @click="btnResumeClicked" :disabled="!paused || !recording">Resume</button>
         <button @click="btnStopClicked" :disabled="!recording">Stop</button>
         <button :disabled="!currentWebmData" @click="btnPlayClicked">Play</button>
