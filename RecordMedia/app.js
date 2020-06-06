@@ -14,7 +14,8 @@ new Vue({
     methods: {
 
         async _initApp() {
-            this._stream = await navigator.mediaDevices.getUserMedia({audio: false, video: true})
+            // this._stream = await navigator.mediaDevices.getUserMedia({audio: false, video: true})
+            this._stream = await navigator.mediaDevices.getDisplayMedia()
             this.$refs.preview.srcObject = this._stream
             this._recorder = new MediaRecorder(this._stream, {mimeType: 'video/webm;codecs=h264'})
             this._recorder.ondataavailable = this.recorder_dataAvailableHandler.bind(this)
