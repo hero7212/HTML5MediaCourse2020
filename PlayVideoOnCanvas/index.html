@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="vueapp">
+    <div>   
+        <canvas width="400" height="300" ref="preview"></canvas>
+    </div>
+    <div>
+        <button @click="btnPlayClick">Play</button>
+        <button @click="btnStopClick">Stop</button>
+    </div>
+    <div>
+        <canvas width="400" height="300" ref="result"></canvas>
+    </div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
